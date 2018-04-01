@@ -500,7 +500,7 @@ void display()
 //
 //}
 //Called when a key is pressed
-void handleKeypress(unsigned char key, int x, int y) {
+void handleKeypress(int key, int x, int y) {
     switch (key) {
         case(GLUT_KEY_LEFT):
             _angle=_angle+1.0f;
@@ -572,24 +572,31 @@ void update(int value) {
     glutTimerFunc(25, update, 0);
 }
 
-
-int  main(int argc, char** argv)
+void windowMenu(int value)
 {
-    glutInit(&argc,argv);        //used to initialize the GLUT library
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    glutInitWindowSize(400, 400 );       /* A x A pixel screen window  */
-    // userinput();
-    glutCreateWindow("Polygon drawn"); /* window title                   */
-    initRendering();
+  handleKeypress((unsigned char)value, 0, 0);
+}
+
+int main(int argc, char** argv)
+{
+		
+		glutInit(&argc,argv);
+		glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH);
+		glutInitWindowSize(600,600);
+		glutCreateWindow("Taj Mahal");
+		initRendering();
+		glutDisplayFunc(display);
+	 	glutReshapeFunc(handleResize);
+	 	
+    glutSpecialFunc(handleKeypress);
+    glutCreateMenu(windowMenu);
+    glutAddMenuEntry("INcrease angle ",GLUT_KEY_LEFT);
+     glutAddMenuEntry("Decrease angle ",GLUT_KEY_RIGHT);
+      glutAttachMenu(GLUT_RIGHT_BUTTON);
+   
     
-    //Set handler functions
-    glutDisplayFunc(display);
-    glutKeyboardFunc(handleKeypress);
-    glutReshapeFunc(handleResize);
- //   glutTimerFunc(25, update, 0);
-    glutMainLoop();
-    
-    return 0;
+	 	glutMainLoop();
+		return 0;
 }
 
 
