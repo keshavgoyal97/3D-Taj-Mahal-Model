@@ -1,13 +1,10 @@
 #include <iostream>
-#include <GL/glut.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include"common.h"
 #include <cmath>
 #include <queue>
 #include <utility>
-using namespace std;
-vector<vector<float> > arr(3);
-vector<float> v(3);
+
+
 int value;
 float _angle=42.0f;
 float z=0.0;
@@ -15,7 +12,7 @@ float z=0.0;
 #define Cos(th) cos(PI/180*(th))
 #define Sin(th) sin(PI/180*(th))
 #define DEF_D 5
-
+using namespace std;
 void drawBase()
 {
     
