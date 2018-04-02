@@ -66,14 +66,9 @@ GLdouble eqn[4] = {0.0, 1.0, 0.0, 0.0};
    glColor3f (1.0, 1.0, 1.0);
  //  glPushMatrix();
    glTranslatef (0.0, 0.0, 0.0);
-
-/*    clip lower half -- y < 0          */
    glClipPlane (GL_CLIP_PLANE0, eqn);
    glEnable (GL_CLIP_PLANE0);
-/*    clip left half -- x < 0           */
-  
-
-  glRotatef (90.0, 1.0, 0.0, 0.0);
+//  glRotatef (90.0, 1.0, 0.0, 0.0);
    glutSolidSphere(1.0, 20, 16);
   // glPopMatrix();
  //  glFlush ();
