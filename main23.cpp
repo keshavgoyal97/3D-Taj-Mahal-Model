@@ -13,49 +13,38 @@ float z=0.0;
 #define Sin(th) sin(PI/180*(th))
 #define DEF_D 5
 using namespace std;
+void drawbase(int xx1,int xx2,int zz1,int zz2)
+{
+	//glNormal3f(0.0f, 0.0f, 1.0f);
+    glVertex3f(xx1*0.75f, 0, 0.75f*zz1);
+    glVertex3f(xx1*0.75f, -0.15f, 0.75f*zz1);
+    glVertex3f(-0.75f*xx2, -0.15f, 0.75f*zz2);
+    glVertex3f(-0.75f*xx2, 0, 0.75f*zz2);
+    
+
+
+}
+
 void drawBase()
 {
-    
-    glTranslatef(0.0f,-0.8f,0.0f);
-    // glColor3f(1.0f, 0.0f, 0.0f);
     glBegin(GL_QUADS);
-    glColor3f(1.0f, 0.0f, 0.0f);
+   glColor3f(1.0f, 1.0f, 1.0f);
     //Front
-    glNormal3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-0.75f, -0.15f, 0.75f);
-    glVertex3f(0.75f, -0.15f, 0.75f);
-    glVertex3f(0.75f, 0.15f, 0.75f);
-    glVertex3f(-0.75f, 0.15f, 0.75f);
-    
+    drawbase(1,1,1,1);
+ 
     //Right
     glNormal3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(0.75f, -0.15f, -0.75f);
-    glVertex3f(0.75f, 0.15f, -0.75f);
-    glVertex3f(0.75f, 0.15f, 0.75f);
-    glVertex3f(0.75f, -0.15f, 0.75f);
-    
+   drawbase(1,-1,1,-1);
+ 
     //Back
     glNormal3f(0.0f, 0.0f, -1.0f);
-    glVertex3f(-0.75f, -0.15f, -0.75f);
-    glVertex3f(0.75f, -0.15f, -0.75f);
-    glVertex3f(0.75f, 0.15f, -0.75f);
-    glVertex3f(-0.75f, 0.15f, -0.75f);
-    
+    drawbase(1,1,-1,-1);
     //Left
     glNormal3f(-1.0f, 0.0f, 0.0f);
-    glVertex3f(-0.75f, -0.15f, -0.75f);
-    glVertex3f(-0.75f, 0.15f, -0.75f);
-    glVertex3f(-0.75f, 0.15f, 0.75f);
-    glVertex3f(-0.75f, -0.15f, 0.75f);
-    glEnd();
-    
-    // glutSwapBuffers();
-    
-    
-    
-    
-    
-    
+    drawbase(-1,1,1,-1);
+    glEnd();  
+
+
 }
 
 void draw_hemisphere(){
@@ -248,7 +237,9 @@ void draw()
 	draw_slnt(-1,-1);
 	glPopMatrix();
 	
-
+	 glPushMatrix();
+        drawBase();
+        glPopMatrix();
 
 }
 
