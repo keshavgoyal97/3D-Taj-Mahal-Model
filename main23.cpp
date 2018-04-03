@@ -75,52 +75,182 @@ GLdouble eqn[4] = {0.0, 1.0, 0.0, 0.0};
 
 }
 
-void draw_smallface()
+void draw_smallfacey()
 {
-    glBegin(GL_QUADS);
-    // glColor3f(1.0f, 0.0f, 0.0f);
+	glBegin(GL_QUADS);
+  // glColor3f(1.0f, 0.0f, 0.0f);
     //Front
-    glNormal3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-0.4f, -0.6f, 0.0f);
-    glVertex3f(0.4f, -0.6f, 0.0f);
-    glVertex3f(0.4f, 0.4f, 0.0f);
-    glVertex3f(-0.4f, 0.4f, 0.0f);
-    
-    
-    
-    
-    
+    glNormal3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(0.5f, 0, r);
+    glVertex3f(0.5f,0.35f, r);
+    glVertex3f(0.5f, 0.35f, 2*r);
+    glVertex3f(0.5f, 0, 2*r);
     glEnd();
-    
-    
+
+
 }
 
 
+void draw_smallface()
+{
+	glBegin(GL_QUADS);
+  // glColor3f(1.0f, 0.0f, 0.0f);
+    //Front
+    glNormal3f(0.0f, 0.0f, 1.0f);
+    glVertex3f(r, 0, 0.5f);
+    glVertex3f(r,0.35f, 0.5f);
+    glVertex3f(2*r, 0.35f, 0.5f);
+    glVertex3f(2*r, 0, 0.5f);
+    glEnd();
 
+
+}
 
 void draw_face()
 {
-    glBegin(GL_QUADS);
-    // glColor3f(1.0f, 0.0f, 0.0f);
+	glBegin(GL_QUADS);
+  // glColor3f(1.0f, 0.0f, 0.0f);
     //Front
     glNormal3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-0.4f, -0.6f, 0.0f);
-    glVertex3f(0.4f, -0.6f, 0.0f);
-    glVertex3f(0.4f, 0.6f, 0.0f);
-    glVertex3f(-0.4f, 0.6f, 0.0f);
-    
-    
-    
-    
-    
+    glVertex3f(-1*r, 0, 0.5f);
+    glVertex3f(-1*r, 0.45f, 0.5f);
+    glVertex3f(r, 0.45f, 0.5f);
+    glVertex3f(r, 0, 0.5f);
     glEnd();
-    
-    
-    
-    
-    
 }
 
+
+void draw_facey()
+{
+	glBegin(GL_QUADS);
+  // glColor3f(1.0f, 0.0f, 0.0f);
+    //Front
+    glNormal3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(0.5f, 0, r);
+    glVertex3f(0.5f, 0.45f, r);
+    glVertex3f(0.5f, 0.45f, -1*r);
+    glVertex3f(0.5f, 0, -1*r);
+    glEnd();
+}
+
+void draw_slnt(int xx,int yy)
+{
+glBegin(GL_QUADS);
+        glVertex3f(2*r*xx, 0, 0.5f*yy);
+        glVertex3f(2*r*xx, 0.35f, 0.5f*yy);
+        glVertex3f(0.5f*xx, 0.35f, 2*r*yy);
+       glVertex3f(0.5f*xx, 0, r*yy);
+        glEnd();
+
+
+}
+
+void draw()
+{
+         glRotatef(_angle,0.0f,1.0f,0.0f);
+         glScalef(sx,sy,sz);
+        glPushMatrix();
+	glColor3f(1,0,0);
+	draw_face();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(0,1,0);
+	draw_smallface();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glTranslatef(-0.5f,0,0);
+	glColor3f(0,0,1);
+	draw_smallface();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glTranslatef(0,0,-1.0f);
+	glColor3f(1,0,0);
+	draw_face();
+	glPopMatrix();
+	
+	
+	glPushMatrix();
+	
+	glColor3f(0,1,0);
+        glTranslatef(0,0,-1.0f);
+	draw_smallface();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glTranslatef(-0.5f,0,-1.0f);
+	glColor3f(0,0,1);
+	draw_smallface();
+	glPopMatrix();
+	
+	glPushMatrix();
+	//glRotatef(-90,0,0,1);
+	glColor3f(1,0,0);
+	draw_facey();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(0,1,0);
+	//glRotatef(-90,0,0,1);
+	draw_smallfacey();
+	glPopMatrix();
+	
+	glPushMatrix();
+	//glRotatef(-90,0,0,1);
+	glTranslatef(0,0,-0.5f);
+	//glRotatef(90,0,0,1);
+	glColor3f(0,0,1);
+	draw_smallfacey();
+	glPopMatrix();
+
+	glPushMatrix();
+	//glRotatef(-90,0,0,1);
+	glColor3f(1,0,0);
+	 glTranslatef(-1.0f,0,0);
+	draw_facey();
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(0,1,0);
+	 glTranslatef(-1.0f,0,0);
+	//glRotatef(-90,0,0,1);
+	draw_smallfacey();
+	glPopMatrix();
+	
+	glPushMatrix();
+	//glRotatef(-90,0,0,1);
+	glTranslatef(-1.0f,0,-0.5f);
+	//glRotatef(90,0,0,1);
+	glColor3f(0,0,1);
+	draw_smallfacey();
+	glPopMatrix();
+	
+	
+	glPushMatrix();
+	glColor3f(1,1,0);
+	draw_slnt(1,1);
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(1,1,0);
+	draw_slnt(1,-1);
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(1,1,0);
+	draw_slnt(-1,1);
+	glPopMatrix();
+	
+	glPushMatrix();
+	glColor3f(1,1,0);
+	draw_slnt(-1,-1);
+	glPopMatrix();
+	
+
+
+}
 
 
 void draw_gon()
@@ -321,7 +451,7 @@ void display()
     glTranslatef(0,0.2f,0);
     //    glColor3f(1.0,0.0,0.0);
     //   draw_cylinder();
-    draw_gon();
+    draw();
     //    draw_cyl();
     glPopMatrix();
     glPushMatrix();
