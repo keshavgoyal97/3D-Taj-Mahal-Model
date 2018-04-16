@@ -1,10 +1,4 @@
-//
-//  draw_compo.hpp
-//  
-//
-//  Created by keshav goyal on 04/04/18.
-//
-//
+
 
 #ifndef draw_compo_hpp
 #define draw_compo_hpp
@@ -18,6 +12,8 @@
 float rx=(70.0f/600.0f);
 float rz=(260.0f/600.0f);
 int flags2;
+
+// draws main base 
 void drawend()
 {
     glBegin(GL_QUADS);
@@ -79,6 +75,7 @@ void drawbase(int xx1,int xx2,int zz1,int zz2)
     
 }
 
+//draws a line prependicular to y axis
 void drawpoints(float centerx,float centery,float x,float y,int zz,int xx,float cons)
 {
     if(zz==1)
@@ -119,7 +116,7 @@ void displayCIRCLE(float centerx,float centery,float R ,int zz,int xx,float cons
     
 }
 
-
+//creates a black coloured door in yz plane by first drawing a rectangle and then a hemisphere by calling drawCIRCLE function .
 void draw_door_y(int yy)
 {
     glColor3f(0,0,0);
@@ -142,7 +139,7 @@ void draw_door_y(int yy)
 }
 
 
-
+//creates a black coloured door in xy plane by first drawing a rectangle and then a hemisphere by calling drawCIRCLE function 
 void draw_door_z(int zz)
 {
     glColor3f(0,0,0);
@@ -170,6 +167,7 @@ void draw_door_z(int zz)
     
 }
 
+//creates a black coloured window in xy plane by first drawing a rectangle and then a hemisphere by calling drawCIRCLE function .
 void draw_window_z(int zz)
 {
     
@@ -188,7 +186,7 @@ void draw_window_z(int zz)
     
 }
 
-
+//creates a black coloured window in yz plane by first drawing a rectangle and then a hemisphere by calling drawCIRCLE function .
 void draw_window_y(int yy)
 {
     
@@ -206,6 +204,8 @@ void draw_window_y(int yy)
     
     
 }
+
+//creates a black coloured window along the face joining the faces in yz and xy planes by first drawing a rectangle and then a hemisphere. 
 
 
 void draw_window_slnt(int xx ,int zz,int xyx)
@@ -308,7 +308,7 @@ void draw_window_slnt(int xx ,int zz,int xyx)
     
 }
 
-
+// creates a ylinder along y axis (first rotated the matrix) with r1 as the base radius , r2 as the top radius and h as height.
 void draw_cylinder(float r1 , float r2, float h)
 {
     
@@ -321,6 +321,8 @@ void draw_cylinder(float r1 , float r2, float h)
     gluDeleteQuadric(quadric);
 }
 
+
+//creates a hemisphere along y axis with radius as r1 by using glutSolidSphere function. The output is further clipped by using r2 as cutting plane (y>r2 only shown)
 
 
 void draw_hemisphere(float r1,float r2){
