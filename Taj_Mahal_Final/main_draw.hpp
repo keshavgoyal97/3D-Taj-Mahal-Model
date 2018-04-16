@@ -40,6 +40,8 @@ void draw()
     float gx=47.0f/256.0f, gy=79.0f/256.0f,gz=79.0f/256.0f;
 //    glRotatef(_angle,0.0f,1.0f,0.0f);
 //    glScalef(sx,sy,sz);
+
+   //draws the various faces
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -144,6 +146,8 @@ void draw()
     drawBase();
     glPopMatrix();
     
+    
+    //draws minaret
     glPushMatrix();
     glTranslatef(0.7f,0,0.7f);
     if(flags)
@@ -151,6 +155,8 @@ void draw()
     draw_cylinder(r/4,r/5,0.6f);
     glPopMatrix();
     
+    
+    // draws disc on minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -159,7 +165,7 @@ void draw()
     glPopMatrix();
     // glPopMatrix();
     
-    //faltu disc
+    //draws disc along minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -175,6 +181,7 @@ void draw()
     
     glPopMatrix();
     
+    //complete minaret
     glPushMatrix();
     if(flags)
     glColor3f(1,1.0,1);
@@ -183,7 +190,7 @@ void draw()
     
     glPopMatrix();
     
-    
+    //draws minaret
     glPushMatrix();
     glTranslatef(0.7f,0,-0.7f);
     if(flags)
@@ -191,6 +198,7 @@ void draw()
     draw_cylinder(r/4,r/5,0.6f);
     glPopMatrix();
     
+    //draws disc on minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -198,6 +206,7 @@ void draw()
     draw_cylinder(r/4,r/4,0.035f);
     glPopMatrix();
     
+    //draws disc along minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -213,6 +222,7 @@ void draw()
     
     glPopMatrix();
     
+    //completes minaret
     glPushMatrix();
     if(flags)
     glColor3f(1,1.0,1);
@@ -222,6 +232,7 @@ void draw()
     glPopMatrix();
     
     
+    //draws minaret
     glPushMatrix();
     glTranslatef(-0.7f,0,0.7f);
     if(flags)
@@ -229,6 +240,7 @@ void draw()
     draw_cylinder(r/4,r/5,0.6f);
     glPopMatrix();
     
+    //draws disc on minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -236,6 +248,7 @@ void draw()
     draw_cylinder(r/4,r/4,0.035f);
     glPopMatrix();
     
+    //draws disc along minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -251,6 +264,8 @@ void draw()
     
     glPopMatrix();
     
+    
+    //completes minaret
     glPushMatrix();
     if(flags)
     glColor3f(1,1.0,1);
@@ -259,6 +274,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws minaret
     glPushMatrix();
     glTranslatef(-0.7f,0,-0.7f);
     if(flags)
@@ -266,6 +282,8 @@ void draw()
     draw_cylinder(r/4,r/5,0.6f);
     glPopMatrix();
     
+    
+    //draws disc on minaret
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -273,6 +291,7 @@ void draw()
     draw_cylinder(r/4,r/4,0.035f);
     glPopMatrix();
     
+    //draws disc along minaret
     
     glPushMatrix();
     if(flags)
@@ -289,6 +308,8 @@ void draw()
     
     glPopMatrix();
     
+    
+    //completes minaret
     glPushMatrix();
     if(flags)
     glColor3f(1,1.0,1);
@@ -298,6 +319,7 @@ void draw()
     glPopMatrix();
     
     
+    //draw  dome
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -305,12 +327,14 @@ void draw()
     draw_cylinder(r-0.033,r-0.033,0.2f);
     glPopMatrix();
     
+    ////draw  dome
     glPushMatrix();
     glTranslatef(0,0.55f,0);
     glTranslatef(0,0.11f,0);
     draw_hemisphere(r,0.08f);
     glPopMatrix();
-    
+  
+    ////draw  dome
     glPushMatrix();
     glTranslatef(0,0.55f,0);
     if(flags)
@@ -321,7 +345,7 @@ void draw()
     
     
     
-    //faltu cylinders
+    //draws guldasta
     
     glPushMatrix();
     if(flags)
@@ -332,6 +356,7 @@ void draw()
     glPopMatrix();
     
     
+    ////draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -340,6 +365,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -348,6 +374,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -356,6 +383,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -364,6 +392,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -371,6 +400,8 @@ void draw()
     draw_cylinder(0.015f,0.01f,0.52f);
     
     glPopMatrix();
+    
+    //draws guldasta
     
     glPushMatrix();
     if(flags)
@@ -380,7 +411,7 @@ void draw()
     
     glPopMatrix();
     
-    
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -388,6 +419,8 @@ void draw()
     draw_cylinder(0.015f,0.01f,0.52f);
     
     glPopMatrix();
+    
+    //draws guldasta
     
     glPushMatrix();
     if(flags)
@@ -397,6 +430,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -404,6 +438,7 @@ void draw()
     draw_cylinder(0.015f,0.01f,0.52f);
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -412,6 +447,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -420,6 +456,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -428,6 +465,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -435,6 +473,7 @@ void draw()
     draw_cylinder(0.015f,0.01f,0.52f);
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -443,6 +482,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws guldasta
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -451,18 +491,7 @@ void draw()
     
     glPopMatrix();
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //draws chhatri
     
     glPushMatrix();
     if(flags)
@@ -471,6 +500,7 @@ void draw()
     draw_cylinder(0.045,0.045,0.14f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -478,6 +508,7 @@ void draw()
     draw_cylinder(0.047,0.047,0.04f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -487,7 +518,7 @@ void draw()
     glPopMatrix();
     
     
-    
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -495,6 +526,7 @@ void draw()
     draw_cylinder(0.045,0.045,0.14f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -502,6 +534,7 @@ void draw()
     draw_cylinder(0.047,0.047,0.04f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -510,7 +543,7 @@ void draw()
     
     glPopMatrix();
     
-    
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -518,7 +551,7 @@ void draw()
     draw_cylinder(0.045,0.045,0.14f);
     glPopMatrix();
     
-    
+    //draws chhatri
     
     glPushMatrix();
     if(flags)
@@ -527,6 +560,7 @@ void draw()
     draw_cylinder(0.047,0.047,0.04f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -536,7 +570,7 @@ void draw()
     glPopMatrix();
     
     
-    
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -544,6 +578,7 @@ void draw()
     draw_cylinder(0.045,0.045,0.14f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(gx,gy,gz);
@@ -551,6 +586,7 @@ void draw()
     draw_cylinder(0.047,0.047,0.04f);
     glPopMatrix();
     
+    //draws chhatri
     glPushMatrix();
     if(flags)
     glColor3f(1,1,1);
@@ -559,6 +595,7 @@ void draw()
     
     glPopMatrix();
     
+    //draws door
     glPushMatrix();
 //    glDisable(GL_LIGHTING);
 //    glDisable(GL_DEPTH);
@@ -569,204 +606,248 @@ void draw()
     draw_door_z(1);
     glPopMatrix();
     
+      //draws door
     glPushMatrix();
 //    glDisable(GL_LIGHTING);
 //    glDisable(GL_DEPTH);
     draw_door_z(-1);
     glPopMatrix();
     
+    
+      //draws door
     glPushMatrix();
 //    glDisable(GL_LIGHTING);
 //    glDisable(GL_DEPTH);
     draw_door_y(1);
     glPopMatrix();
     
+    
+      //draws door
     glPushMatrix();
 //    glDisable(GL_LIGHTING);
 //    glDisable(GL_DEPTH);
     draw_door_y(-1);
     glPopMatrix();
     
+      //draws window
     glPushMatrix();
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r,0,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r,0.175f,0);
     draw_window_z(1);
     glPopMatrix();
     
-    
+    //draws window
     glPushMatrix();
     draw_window_z(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r,0,0);
     draw_window_z(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0);
     draw_window_z(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r,0.175f,0);
     draw_window_z(-1);
     glPopMatrix();
     
-    
+    //draws window
     glPushMatrix();
     glTranslatef(-3*r,0,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r-3*r,0,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(-3*r,0.175f,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r-3*r,0.175f,0);
     draw_window_z(1);
     glPopMatrix();
     
+    //draws window
     
     glPushMatrix();
     glTranslatef(-3*r,0,0);
     draw_window_z(-1);
     glPopMatrix();
     
+    
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r-3*r,0,0);
     draw_window_z(-1);
     glPopMatrix();
-    
+   
+   //draws window 
     glPushMatrix();
     glTranslatef(-3*r,0.175f,0);
     draw_window_z(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0.5*r-3*r,0.175f,0);
     draw_window_z(-1);
     glPopMatrix();
     
     
+    //draws window
     glPushMatrix();
     draw_window_y(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0,0.5*r);
     draw_window_y(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0);
     draw_window_y(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0.5*r);
     draw_window_y(1);
     glPopMatrix();
     
     
+    //draws window
     glPushMatrix();
     draw_window_y(-1);
     glPopMatrix();
+    
+    //draws window
     
     glPushMatrix();
     glTranslatef(0,0,0.5*r);
     draw_window_y(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0);
     draw_window_y(-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0.5*r);
     draw_window_y(-1);
     glPopMatrix();
     
-    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0,-3*r);
     draw_window_y(1);
     glPopMatrix();
     
+    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0,0.5*r-3*r);
     draw_window_y(1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,-3*r);
     draw_window_y(1);
     glPopMatrix();
     
+    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0.5*r-3*r);
     draw_window_y(1);
     glPopMatrix();
     
-    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0,-3*r);
     draw_window_y(-1);
     glPopMatrix();
     
+    //draws window
+    
     glPushMatrix();
     glTranslatef(0,0,0.5*r-3*r);
     draw_window_y(-1);
     glPopMatrix();
     
+    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,-3*r);
     draw_window_y(-1);
     glPopMatrix();
     
+    
+    //draws window
     glPushMatrix();
     glTranslatef(0,0.175f,0.5*r-3*r);
     draw_window_y(-1);
     glPopMatrix();
     
-    
+    //draws window
     glPushMatrix();
     draw_window_slnt(1,1,1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     draw_window_slnt(-1,-1,-1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     draw_window_slnt(-1,1,1);
     glPopMatrix();
     
+    //draws window
     glPushMatrix();
     draw_window_slnt(1,-1,-1);
     glPopMatrix();
     
+    //draws an end
     glPushMatrix();
     drawfix();
     glPopMatrix();
