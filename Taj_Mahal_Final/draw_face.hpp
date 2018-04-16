@@ -1,6 +1,8 @@
 #ifndef draw_face_hpp
 #define draw_face_hpp
 float r =(100.0f/600.0f);
+
+//draw main face along xy plane
 void draw_face(int zz)
 {
     glBegin(GL_QUADS);
@@ -14,6 +16,7 @@ void draw_face(int zz)
     glEnd();
 }
 
+//draw main face along yz plane
 
 void draw_facey(int yy)
 {
@@ -27,6 +30,8 @@ void draw_facey(int yy)
     glVertex3f(yy*0.5f, 0, -1*r);
     glEnd();
 }
+
+//draw face with less height along yz plane . 
 
 void draw_smallfacey(int yy, int xy)
 {
@@ -46,6 +51,7 @@ void draw_smallfacey(int yy, int xy)
     
 }
 
+//draw face with less height along xy plane .
 
 void draw_smallface(int zz,int xy)
 {
@@ -65,6 +71,8 @@ void draw_smallface(int zz,int xy)
 }
 
 
+//used to draw face joining the faces in xy and yz planes.
+
 void draw_slnt(int xx,int yy)
 {
     glBegin(GL_QUADS);
@@ -78,7 +86,6 @@ void draw_slnt(int xx,int yy)
 }
 
 #endif /* draw_compo_hpp */
-
 
 
 
